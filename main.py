@@ -2,6 +2,7 @@ from dotenv import dotenv_values
 
 from utils.unshortner import unshortner
 from utils.yt_dler import download_video
+from utils.utils import delete_file
 
 import discord
 from discord.ext import commands
@@ -65,6 +66,7 @@ async def d(ctx, url: str):
 
     # mp4_file = download_video(send_url, fmt='mp4', ffmpeg_location=config['FFMPEG_LOCATION'])
     # file = discord.File(mp4_file)
+    # delete_file(mp4_file)
 
     await ctx.send(f'Discord upload size is too small, here is the unshortned url instead: {send_url}')
 
@@ -78,6 +80,7 @@ async def ds(ctx, url: str):
 
     mp3_file = download_video(send_url, fmt='mp3', ffmpeg_location=config['FFMPEG_LOCATION'])
     file = discord.File(mp3_file)
+    delete_file(mp3_file)  # delete local copy of file
 
     await ctx.send(file=file)
 
