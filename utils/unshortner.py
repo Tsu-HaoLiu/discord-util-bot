@@ -13,10 +13,9 @@ def unshortner(url: str) -> dict:
 
     redirect_list = []
     # Print each redirect
-    if len(response.history) > 1:
-        for x, redirect in enumerate(response.history, 1):
-            print(f"Redirected #{x}: {redirect.url}", )
-            redirect_list.append(redirect.url)
+    for x, redirect in enumerate(response.history, 1):
+        print(f"Redirected #{x}: {redirect.url}", )
+        redirect_list.append(redirect.url)
 
     # Print the final URL
     print("Final URL:", response.url)
