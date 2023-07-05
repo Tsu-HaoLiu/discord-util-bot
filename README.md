@@ -1,6 +1,13 @@
 # discord-util-bot
 
 
+## Features
+
+- URL unshortner
+- URL full redirect list
+- URL to mp3 converter
+
+
 ## Download ffmpeg
 #### Linux
 
