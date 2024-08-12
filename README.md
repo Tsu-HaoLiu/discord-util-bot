@@ -34,3 +34,8 @@ sudo apt install ffmpeg
 ### discord.py docs
 
 https://discordpy.readthedocs.io/en/stable/index.html
+
+
+### Video convertion
+
+https://github.com/yt-dlp/yt-dlp
