@@ -2,7 +2,6 @@ import yt_dlp
 
 from .utils import remove_special_characters
 
-
 file_format = {
     'mp4': {
         'format': 'bestvideo*+bestaudio/best',
@@ -38,7 +37,7 @@ def download_video(url, fmt='mp4', ffmpeg_location=None) -> str:
     file_title = get_title(url)
 
     ydl_opts = {
-        'outtmpl': f'./{file_title}',
+        'outtmpl': f'./{file_title}.{fmt}',
         'merge_output_format': f'{fmt}',
         **file_format[fmt],
         'ffmpeg_location': ffmpeg_location,
