@@ -12,7 +12,7 @@ config = dotenv_values(".env")
 intents = discord.Intents.default()
 intents.message_content = True
 input_channel = int(config['INPUT_CHANNEL'])
-bot = commands.Bot(command_prefix='?', intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.event
 async def on_message(message):
