@@ -35,9 +35,14 @@ def get_title(url):
 def download_video(url, fmt='mp4', ffmpeg_location=None) -> str:
 
     file_title = get_title(url)
+    # there is a bug with mp4 and mp3 files. mp3 auto apply the .mp3 file format
+    # while mp4 do not. We will need to fix it manually (might be fixed in later yt-dl updates)
+    custom_format = ""
+    if fmt == "mp4":
+        custom_format = ".mp4"
 
     ydl_opts = {
-        'outtmpl': f'./{file_title}.{fmt}',
+        'outtmpl': f'./{file_title}{custom_format}',
         'merge_output_format': f'{fmt}',
         **file_format[fmt],
         'ffmpeg_location': ffmpeg_location,

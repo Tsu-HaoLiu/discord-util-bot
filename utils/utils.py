@@ -22,9 +22,11 @@ def convert_bytes_to_mb(file_bytes: int) -> float:
     return round(file_bytes / (1024*1024), 2)
 
 
-def create_formatted_reply(ctx, send_url, details, hide_embed=False) -> str:
+def create_formatted_reply(ctx, send_url: str, details: tuple, hide_embed=False) -> str:
     if not details:
         details = ""
+    else:
+        details = " ".join(details)
 
     if hide_embed:
         return f"`{ctx.message.content}`\n{details}\n<{send_url}>"
